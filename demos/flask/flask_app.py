@@ -9,8 +9,8 @@ from flask import Flask, request, redirect, session
 
 # app setup
 smart_defaults = {
-    'app_id': '4sHWT8Gwt3kNkwR5Cc17VlehUlurB4',
-    'app_secret': 'UDRYTkF3Zy13YXptYWtSaUk1cVNtMEtEbjVQNEZJNFJ3LXFzSWw1Mk5qQVFId0ZlNlc=',
+    'app_id': 'Danbona Smart App',
+    #'app_secret': 'UDRYTkF3Zy13YXptYWtSaUk1cVNtMEtEbjVQNEZJNFJ3LXFzSWw1Mk5qQVFId0ZlNlc=',
     'api_base': "https://fhirsandbox.healthit.gov/secure/r4/fhir",
     'redirect_uri': "https://flask-fhir.onrender.com:8000/fhir-app/",
     #'redirect_uri': 'http://localhost:8000/fhir-app/',
