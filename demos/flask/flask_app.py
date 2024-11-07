@@ -9,11 +9,11 @@ from flask import Flask, request, redirect, session
 
 # app setup
 smart_defaults = {
-    'app_id': 'flask-fhir',
+    'app_id': 'my_web_app',
     #'app_secret': 'UDRYTkF3Zy13YXptYWtSaUk1cVNtMEtEbjVQNEZJNFJ3LXFzSWw1Mk5qQVFId0ZlNlc=',
     'api_base': "https://r4.smarthealthit.org"
     #'redirect_uri': "https://flask-fhir.onrender.com:8000/fhir-app/",
-    #'redirect_uri': 'http://localhost:8000/fhir-app/',
+    'redirect_uri': 'http://localhost:8000/fhir-app/'
 }
 
 app = Flask(__name__)
