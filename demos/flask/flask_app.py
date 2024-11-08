@@ -1,13 +1,11 @@
 #!/usr/bin/env python3
 
 import logging
-#import msgspec
 from fhirclient import client
 from fhirclient.models.medication import Medication
 from fhirclient.models.medicationrequest import MedicationRequest
 
 from flask import Flask, request, redirect, session
-#from flask_session.__init__ import Session
 
 # app setup
 smart_defaults = {
@@ -18,7 +16,8 @@ smart_defaults = {
 }
 
 app = Flask(__name__)
-#sess = Session()
+app.config['SECRET_KEY'] = 'raabbbcccdddzz123'
+app.config['SESSION_TYPE'] = 'filesystem'
 
 def _save_state(state):
     session['state'] = state
@@ -136,11 +135,6 @@ def reset():
 if '__main__' == __name__:
     import flaskbeaker
     flaskbeaker.FlaskBeaker.setup_app(app)
-
-    app.config['SECRET_KEY'] = 'flask fhir key'
-    app.config['SESSION_TYPE'] = 'filesystem'
-
-    #sess.init_app(app)
     
     logging.basicConfig(level=logging.DEBUG)
     app.run(debug=True, port=10000)
