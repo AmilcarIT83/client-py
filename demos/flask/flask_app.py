@@ -6,15 +6,19 @@ from fhirclient.models.medication import Medication
 from fhirclient.models.medicationrequest import MedicationRequest
 
 from flask import Flask, request, redirect, session
+from flask.ext.session import Session
 
 # app setup
 smart_defaults = {
-    'app_id': 'my_web_app',
+    'app_id': '4sHWT8Gwt3kNkwR5Cc17VlehUlurB4',
+    #'app_id': 'my_web_app',
+    'api_secret': 'UDRYTkF3Zy13YXptYWtSaUk1cVNtMEtEbjVQNEZJNFJ3LXFzSWw1Mk5qQVFId0ZlNlc=',
     'api_base': 'https://fhirsandbox.healthit.gov/secure/r4/fhir',
     'redirect_uri': 'http://0.0.0.0:10000/fhir-app/'
 }
 
 app = Flask(__name__)
+sess = Session()
 
 def _save_state(state):
     session['state'] = state
@@ -132,6 +136,11 @@ def reset():
 if '__main__' == __name__:
     import flaskbeaker
     flaskbeaker.FlaskBeaker.setup_app(app)
+
+    app.secret_key = 'super secret key'
+    app.config['SESSION_TYPE'] = 'filesystem'
+
+    sess.init_app(app)
     
     logging.basicConfig(level=logging.DEBUG)
     app.run(debug=True, port=10000)
