@@ -11,7 +11,7 @@ from flask import Flask, request, redirect, session
 smart_defaults = {
     'app_id': 'my_web_app',
     'api_base': 'https://fhirsandbox.healthit.gov/secure/r4/fhir',
-    'redirect_uri': 'http://localhost:8000/fhir-app/'
+    'redirect_uri': 'https://flask-fhir.onrender.com:8000/fhir-app/'
 }
 
 app = Flask(__name__)
