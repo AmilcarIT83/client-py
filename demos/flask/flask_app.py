@@ -11,7 +11,7 @@ from flask import Flask, request, redirect, session
 smart_defaults = {
     'app_id': 'my_web_app',
     'api_base': 'https://fhirsandbox.healthit.gov/secure/r4/fhir',
-    'redirect_uri': 'https://flask-fhir.onrender.com:8000/fhir-app/'
+    'redirect_uri': 'http://0.0.0.0:10000/fhir-app/'
 }
 
 app = Flask(__name__)
@@ -134,4 +134,4 @@ if '__main__' == __name__:
     flaskbeaker.FlaskBeaker.setup_app(app)
     
     logging.basicConfig(level=logging.DEBUG)
-    app.run(debug=True, port=8000)
+    app.run(debug=True, port=10000)
