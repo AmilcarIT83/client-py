@@ -6,7 +6,7 @@ from fhirclient.models.medication import Medication
 from fhirclient.models.medicationrequest import MedicationRequest
 
 from flask import Flask, request, redirect, session
-from flask.ext.session import Session
+from flask_session.__init__ import Session
 
 # app setup
 smart_defaults = {
