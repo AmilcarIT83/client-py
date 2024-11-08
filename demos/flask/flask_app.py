@@ -137,8 +137,8 @@ if '__main__' == __name__:
     import flaskbeaker
     flaskbeaker.FlaskBeaker.setup_app(app)
 
-    #app.secret_key = 'super secret key'
-    #app.config['SESSION_TYPE'] = 'filesystem'
+    app.config['SECRET_KEY'] = 'flask fhir key'
+    app.config['SESSION_TYPE'] = 'filesystem'
 
     #sess.init_app(app)
     
