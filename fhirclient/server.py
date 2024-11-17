@@ -3,7 +3,7 @@ import requests
 import logging
 import urllib.parse as urlparse
 
-from .auth import FHIRAuth
+from .auth import FHIROAuth2Auth
 
 FHIRJSONMimeType = 'application/fhir+json'
 
@@ -91,7 +91,7 @@ class FHIRServer(object):
                 'redirect_uri': self.client.redirect if self.client is not None else None,
                 'jwt_token': self.client.jwt_token if self.client is not None else None,
             }
-            self.auth = FHIRAuth.from_capability_security(security, settings)
+            self.auth = FHIROAuth2Auth.from_capability_security(security, settings)
             self.should_save_state()
     
     
@@ -311,5 +311,5 @@ class FHIRServer(object):
         """
         assert state
         self.base_uri = state.get('base_uri') or self.base_uri
-        self.auth = FHIRAuth.create(state.get('auth_type'), state=state.get('auth'))
+        self.auth = FHIROAuth2Auth.create(state.get('auth_type'), state=state.get('auth'))
     

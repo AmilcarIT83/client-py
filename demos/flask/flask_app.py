@@ -13,7 +13,7 @@ smart_defaults = {
     'api_secret': 'UDRYTkF3Zy13YXptYWtSaUk1cVNtMEtEbjVQNEZJNFJ3LXFzSWw1Mk5qQVFId0ZlNlc=',
     'api_base': 'https://fhirsandbox.healthit.gov/secure/r4/fhir',
     'redirect_uri': 'https://flask-fhir.onrender.com/fhir-app/',
-    'scope': 'launch launch/patient patient/Patient.read patient/Medication.read'
+    #'scope': 'launch launch/patient patient/Patient.read patient/Medication.read'
 }
 
 app = Flask(__name__)
